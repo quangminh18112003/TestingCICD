@@ -1,0 +1,131 @@
+# 🛍️ Uniclub E-Commerce System
+
+A full-stack e-commerce platform built with Spring Boot and React, featuring admin management dashboard and customer shopping website.
+
+## 🚀 Quick Start
+
+### Option 1: Development Mode (với Hot Reload)
+Dành cho lúc đang code và cần thay đổi nhanh:
+
+```bash
+# Clone repository
+git clone https://github.com/huytran19-dot/Uniclub_Testing.git
+cd Uniclub_Testing
+
+# Chạy tất cả (MySQL Docker + Backend Dev + Frontend Dev)
+start-all.bat
+```
+
+**Sau khi chạy:**
+- Frontend Web: http://localhost:5173 (Hot reload enabled)
+- Frontend Admin: http://localhost:5174 (Hot reload enabled)
+- Backend API: http://localhost:8080 (Hot reload enabled)
+- phpMyAdmin: http://localhost:8081
+
+### Option 2: Docker Mode (Production-like)
+Dành cho testing và demo, giống môi trường production:
+
+```bash
+# Cách 1: Dùng script
+start-docker-all.bat
+
+# Cách 2: Dùng lệnh trực tiếp
+docker-compose up -d
+```
+
+**Sau khi chạy:**
+- Frontend (Web + Admin): http://localhost
+- Admin Panel: http://localhost/admin
+- Backend API: http://localhost/api
+- phpMyAdmin: http://localhost:8081
+
+### Stop All Services
+
+```bash
+# Stop tất cả (Docker + Dev processes)
+stop-all.bat
+
+# Hoặc chỉ stop Docker
+docker-compose down
+```
+
+## 📖 Full Documentation
+
+See **[SETUP_GUIDE.md](SETUP_GUIDE.md)** for detailed setup instructions, troubleshooting, and configuration.
+See **[DOCKER_SETUP_GUIDE.md](DOCKER_SETUP_GUIDE.md)** for Docker-specific documentation.
+
+## ✨ Features
+
+- 🔐 User Authentication & Authorization (JWT + Email OTP)
+- 🛒 Shopping Cart & Checkout
+- 💳 Payment Integration (COD & VNPay)
+- 📦 Order Management & Tracking
+- 👔 Product Management with Variants
+- 📊 Admin Dashboard
+- 📧 Email Notifications (SendGrid)
+- 🚚 Shipping Fee Calculation
+
+## 🔑 Login Credentials
+
+- **Email:** admin@uniclub.com
+- **Password:** Admin@123
+- **phpMyAdmin:** http://localhost:8081
+
+## 🔑 Default Login
+
+```
+Admin: admin@uniclub.com / huytran123
+Buyer: buyer@uniclub.com / huytran123
+```
+
+## 🛠️ Tech Stack
+
+**Backend:**
+- Spring Boot 3.x
+- Spring Security + JWT
+- MySQL 8.0
+- SendGrid API
+- VNPay Payment Gateway
+
+**Frontend:**
+- React 19.2.0
+- React Router
+- Tailwind CSS
+- Lucide Icons
+
+## 📝 Important Notes
+
+⚠️ **Before running the project:**
+1. Install prerequisites: Docker, Java 17+, Node.js 18+, Maven, pnpm
+2. Get SendGrid API key from https://sendgrid.com/
+3. Set environment variable: `SENDGRID_API_KEY`
+4. See [SETUP_GUIDE.md](SETUP_GUIDE.md) for details
+
+## 📦 Project Structure
+
+```
+Uniclub_Testing/
+├── uniclub-be/           # Spring Boot Backend
+├── uniclub-fe/
+│   ├── admin/           # Admin Dashboard
+│   └── web/             # Customer Website
+├── mysql-init/          # Database Schema
+├── docker-compose.yml   # MySQL + phpMyAdmin
+└── SETUP_GUIDE.md       # Detailed Setup Guide
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/new-feature`
+3. Commit changes: `git commit -m 'Add new feature'`
+4. Push to branch: `git push origin feature/new-feature`
+5. Submit pull request
+
+## 📄 License
+
+This project is for educational purposes.
+
+---
+
+For detailed setup instructions, see **[SETUP_GUIDE.md](SETUP_GUIDE.md)**
